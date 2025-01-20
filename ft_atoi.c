@@ -19,6 +19,16 @@ static int	ft_whitespace(char c)
 	return (0);
 }
 
+static int	is_overflowing(long number, int is_negative)
+{
+	if (is_negative == 1 && number > 2147483647)
+		return (1);
+	else if (is_negative == -1 && number > 2147483648)
+		return (1);
+	else
+		return (0);
+}
+
 int	ft_atoi(const char *nptr)
 {
 	size_t	i;
@@ -39,6 +49,8 @@ int	ft_atoi(const char *nptr)
 	while (ft_isdigit(nptr[i]))
 	{
 		nbr = (nbr * 10) + nptr[i] - 48;
+		if (is_overflowing(number, is_negative))
+			return (0);
 		i++;
 	}
 	return (nbr * sign);
