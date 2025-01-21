@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yguinio <yguinio@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 11:15:42 by yguinio           #+#    #+#             */
-/*   Updated: 2024/11/18 08:47:51 by yguinio          ###   ########.fr       */
+/*   Updated: 2025/01/21 11:02:19 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,23 +37,6 @@ static size_t	ft_nblen(int n)
 		i++;
 	}
 	return (i);
-}
-
-static char	*ft_reverse(char *str)
-{
-	size_t			i;
-	size_t const	len = ft_strlen(str) - 1;
-	char			temp;
-
-	i = 0;
-	while (i <= (len) / 2)
-	{
-		temp = str[len - i];
-		str[len - i] = str[i];
-		str[i] = temp;
-		i++;
-	}
-	return (str);
 }
 
 char	*ft_itoa(int n)

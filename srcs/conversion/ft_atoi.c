@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yguinio <yguinio@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:58:37 by yguinio           #+#    #+#             */
-/*   Updated: 2024/11/18 08:47:24 by yguinio          ###   ########.fr       */
+/*   Updated: 2025/01/21 10:50:15 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_atoi(const char *nptr)
 {
 	size_t	i;
 	int		sign;
-	int		nbr;
+	long	nbr;
 
 	nbr = 0;
 	sign = 1;
@@ -49,7 +49,7 @@ int	ft_atoi(const char *nptr)
 	while (ft_isdigit(nptr[i]))
 	{
 		nbr = (nbr * 10) + nptr[i] - 48;
-		if (is_overflowing(number, is_negative))
+		if (is_overflowing(nbr, sign))
 			return (0);
 		i++;
 	}
