@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:58:37 by yguinio           #+#    #+#             */
-/*   Updated: 2025/01/21 22:57:08 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/01/21 22:59:52 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,21 @@ static int	ft_whitespace(char c)
 	return (0);
 }
 
-static int	is_overflowing(long number, int is_negative)
+static int	is_overflowing(long long number, int is_negative)
 {
-	if (is_negative == 1 && number > INT_MAX - 1)
+	if (is_negative == 1 && number > LONG_MAX - 1)
 		return (1);
-	else if (is_negative == -1 && number > INT_MAX)
+	else if (is_negative == -1 && number > LONG_MAX)
 		return (1);
 	else
 		return (0);
 }
 
-int	ft_atoi(const char *nptr)
+long	ft_atol(const char *nptr)
 {
-	size_t	i;
-	int		sign;
-	long	nbr;
+	size_t				i;
+	int					sign;
+	long long int		nbr;
 
 	nbr = 0;
 	sign = 1;

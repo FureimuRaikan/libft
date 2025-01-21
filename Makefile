@@ -6,7 +6,7 @@
 #    By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/12 11:29:57 by yguinio           #+#    #+#              #
-#    Updated: 2025/01/21 15:42:10 by fureimu          ###   ########.fr        #
+#    Updated: 2025/01/21 23:02:20 by fureimu          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ STRINGS_DIR= $(addprefix $(SRC_DIR), strings/)
 
 CHECKS_FILES= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c 
 
-CONVERSION_FILES= ft_toupper.c ft_tolower.c ft_atoi.c ft_itoa.c ft_uitoa.c ft_ulitoa_base.c ft_unbr_base_len.c
+CONVERSION_FILES= ft_toupper.c ft_tolower.c ft_atoi.c ft_itoa.c ft_uitoa.c ft_ulitoa_base.c ft_unbr_base_len.c ft_atoi_arg_mix.c \
+					ft_atol.c ft_atol_arg_mix.c
 
 DISPLAY_FILES= ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c get_next_line.c ft_printf.c ft_putchar_len.c \
 				ft_putnbr_hex_len.c ft_putnbr_len.c ft_putptr_len.c ft_putstr_len.c
