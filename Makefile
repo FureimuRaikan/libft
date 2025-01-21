@@ -6,7 +6,7 @@
 #    By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/12 11:29:57 by yguinio           #+#    #+#              #
-#    Updated: 2025/01/21 11:38:25 by fureimu          ###   ########.fr        #
+#    Updated: 2025/01/21 11:45:47 by fureimu          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,7 +88,7 @@ $(OBJ_DIR)%.o: $(STRINGS_DIR)%.c | $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
 
 clean:
-	@rm -rf $(OBJ)
+	@rm -rf $(OBJ_DIR)
 	@echo "$(BLUE)libft objects files cleaned!$(DEF_COLOR)"
 
 fclean : clean
