@@ -1,19 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strings_fuctions.h                                 :+:      :+:    :+:   */
+/*   strings_functions.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 10:29:32 by fureimu           #+#    #+#             */
-/*   Updated: 2025/01/21 11:21:44 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/01/21 15:45:37 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	STRINGS_FUCTIONS_H
+#ifndef STRINGS_FUNCTIONS_H
 # define STRINGS_FUNCTIONS_H
-
-#include "libft.h"
 
 size_t	ft_strlen(const char *str);
 
@@ -22,6 +20,7 @@ char	*ft_strdup(const char *s);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t siz);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin_free(char *s1, char *s2);
 
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);

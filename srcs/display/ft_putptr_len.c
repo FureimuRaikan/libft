@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memory.h                                           :+:      :+:    :+:   */
+/*   ft_putptr_len.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 10:29:30 by fureimu           #+#    #+#             */
-/*   Updated: 2025/01/21 15:45:33 by fureimu          ###   ########.fr       */
+/*   Created: 2024/11/21 17:05:41 by yguinio           #+#    #+#             */
+/*   Updated: 2025/01/21 15:27:58 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MEMORY_H
-# define MEMORY_H
+#include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size);
-void	ft_bzero(void *s, size_t n);
+int	ft_putptr_len(void *ptr)
+{
+	char const	*base = "0123456789abcdef";
+	char		*str;
+	int			len;
 
-void	*ft_memset(void *s, int c, size_t n);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*ft_memmove(void *dest, const void *src, size_t n);
-void	*ft_memchr(const void *s, int c, size_t n);
-int		ft_memcmp(const void *s1, const void *s2, size_t n);
-
-#endif
+	if (!ptr)
+		return (ft_putstr_len("(nil)"));
+	len = ft_putstr_len("0x");
+	str = ft_ulitoa_base((unsigned long int )ptr, base);
+	len += ft_putstr_len(str);
+	free(str);
+	return (len);
+}

@@ -6,16 +6,15 @@
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 10:29:34 by fureimu           #+#    #+#             */
-/*   Updated: 2025/01/21 10:34:47 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/01/21 15:45:29 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LINKED_LIST_H
-#define LINKED_LIST_H
+# define LINKED_LIST_H
 
-#include "libft.h"
-
-typedef struct s_list {
+typedef struct s_list
+{
 	void			*content;
 	struct s_list	*next;
 }	t_list;

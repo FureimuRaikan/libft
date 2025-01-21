@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memory.h                                           :+:      :+:    :+:   */
+/*   ft_uitoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 10:29:30 by fureimu           #+#    #+#             */
-/*   Updated: 2025/01/21 15:45:33 by fureimu          ###   ########.fr       */
+/*   Created: 2025/01/21 15:30:42 by fureimu           #+#    #+#             */
+/*   Updated: 2025/01/21 15:32:34 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MEMORY_H
-# define MEMORY_H
+#include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size);
-void	ft_bzero(void *s, size_t n);
+char	*ft_uitoa(unsigned int n)
+{
+	size_t			i;
+	char			*str;
+	size_t const	nblen = ft_unblen_base(n, "0123456789");
 
-void	*ft_memset(void *s, int c, size_t n);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*ft_memmove(void *dest, const void *src, size_t n);
-void	*ft_memchr(const void *s, int c, size_t n);
-int		ft_memcmp(const void *s1, const void *s2, size_t n);
-
-#endif
+	i = 0;
+	str = (char *)malloc(sizeof(char) * (nblen + 1));
+	if (!str)
+		return (NULL);
+	while (n > 9)
+	{
+		str[i] = (n % 10) + 48;
+		n /= 10;
+		i++;
+	}
+	str[i++] = n + 48;
+	str[i] = 0;
+	return (ft_reverse(str));
+}

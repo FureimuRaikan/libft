@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memory.h                                           :+:      :+:    :+:   */
+/*   ft_unbr_base_len.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 10:29:30 by fureimu           #+#    #+#             */
-/*   Updated: 2025/01/21 15:45:33 by fureimu          ###   ########.fr       */
+/*   Created: 2025/01/21 15:33:57 by fureimu           #+#    #+#             */
+/*   Updated: 2025/01/21 15:34:19 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MEMORY_H
-# define MEMORY_H
+#include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size);
-void	ft_bzero(void *s, size_t n);
+size_t	ft_unblen_base(unsigned long int n, const char *base)
+{
+	size_t			i;
+	const size_t	baselen = ft_strlen(base);
 
-void	*ft_memset(void *s, int c, size_t n);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*ft_memmove(void *dest, const void *src, size_t n);
-void	*ft_memchr(const void *s, int c, size_t n);
-int		ft_memcmp(const void *s1, const void *s2, size_t n);
-
-#endif
+	i = 1;
+	while (n > baselen - 1)
+	{
+		n /= (baselen);
+		i++;
+	}
+	return (i);
+}
