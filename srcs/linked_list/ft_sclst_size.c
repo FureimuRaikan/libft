@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_sclst_size.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 10:39:24 by yguinio           #+#    #+#             */
-/*   Updated: 2025/01/22 16:09:13 by fureimu          ###   ########.fr       */
+/*   Created: 2025/01/10 10:26:44 by pjaguin           #+#    #+#             */
+/*   Updated: 2025/01/22 16:09:32 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <string.h>
-# include <stdlib.h>
-# include <stdarg.h>
-# include <limits.h>
+int	ft_sclst_size(t_sclist *sclist)
+{
+	t_sclist	*begin;
+	int			count;
 
-# include "checks.h"
-# include "conversion.h"
-# include "display.h"
-# include "linked_list.h"
-# include "memory.h"
-# include "strings_functions.h"
-
-#endif
+	begin = sclist;
+	if (!sclist)
+		return (0);
+	count = 1;
+	while (sclist->next != begin)
+	{
+		sclist = sclist->next;
+		count++;
+	}
+	return (count);
+}

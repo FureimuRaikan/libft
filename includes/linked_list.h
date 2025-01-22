@@ -6,7 +6,7 @@
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 10:29:34 by fureimu           #+#    #+#             */
-/*   Updated: 2025/01/21 15:45:29 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/01/22 16:06:05 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,17 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+typedef struct s_sclist
+{
+	int				value;
+	struct s_sclist	*next;
+}					t_sclist;
+
+int		ft_sclst_size(t_sclist *sclist);
+void	ft_sclst_clean(t_sclist **sclst);
+void	ft_sclst_print(t_sclist **sclst, char c);
+int		ft_sclst_max(t_sclist *sclist);
+int		ft_sclst_min(t_sclist *sclist);
 
 #endif
