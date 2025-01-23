@@ -6,13 +6,13 @@
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 10:11:22 by yguinio           #+#    #+#             */
-/*   Updated: 2025/01/21 15:22:27 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/01/23 17:00:16 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_read_file(int fd, char *storage)
+char	*read_file(int fd, char *main_str)
 {
 	char	*buff;
 	int		count;
@@ -21,90 +21,90 @@ char	*ft_read_file(int fd, char *storage)
 	buff = ft_calloc(sizeof(char), (BUFFER_SIZE + 1));
 	if (!buff)
 		return (NULL);
-	while (!ft_strchr(storage, '\n') && count != 0)
+	while (!ft_strchr(main_str, '\n') && count != 0)
 	{
 		count = read(fd, buff, BUFFER_SIZE);
 		if (count == -1)
 		{
 			if (buff)
 				free(buff);
-			if (storage)
-				free(storage);
+			if (main_str)
+				free(main_str);
 			return (NULL);
 		}
 		buff[count] = 0;
-		storage = ft_strjoin_free(storage, buff);
+		main_str = ft_strjoin_free(main_str, buff);
 	}
 	free(buff);
-	return (storage);
+	return (main_str);
 }
 
-char	*ft_line(char *storage)
+char	*ft_get_line(char *main_str)
 {
-	char	*line;
+	char	*str;
 	size_t	i;
 
 	i = 0;
-	if (!storage[i])
+	if (!main_str[i])
 		return (NULL);
-	while (storage[i] && storage[i] != '\n')
+	while (main_str[i] && main_str[i] != '\n')
 		i++;
-	line = ft_calloc((i + 2), sizeof(char));
-	if (!line)
+	str = ft_calloc(sizeof(char), (i + 2));
+	if (!str)
 		return (NULL);
 	i = 0;
-	while (storage[i] && storage[i] != '\n')
+	while (main_str[i] && main_str[i] != '\n')
 	{
-		line[i] = storage[i];
+		str[i] = main_str[i];
 		i++;
 	}
-	if (storage[i] == '\n')
+	if (main_str[i] == '\n')
 	{
-		line[i] = '\n';
+		str[i] = main_str[i];
 		i++;
 	}
-	line[i] = '\0';
-	return (line);
+	str[i] = 0;
+	return (str);
 }
 
-char	*ft_next_line(char *storage)
+char	*ft_get_next_content(char *main_str)
 {
-	char	*next;
-	int		i;
-	int		j;
-	size_t	storage_len;
+	size_t	i;
+	size_t	j;
+	char	*str;
+	size_t	main_str_len;
 
 	i = 0;
 	j = 0;
-	storage_len = ft_strlen(storage);
-	while (storage[i] && storage[i] != '\n')
+	main_str_len = ft_strlen(main_str);
+	while (main_str[i] && main_str[i] != '\n')
 		i++;
-	if (!storage[i])
+	if (!main_str[i])
 	{
-		free(storage);
+		free(main_str);
 		return (NULL);
 	}
-	next = ft_calloc((storage_len - i + 1), sizeof(char));
-	if (!next)
+	str = ft_calloc(sizeof(char), main_str_len - i + 1);
+	if (!str)
 		return (NULL);
-	while (storage[++i])
-		next[j++] = storage[i];
-	next[j] = 0;
-	free(storage);
-	return (next);
+	while (main_str[++i])
+		str[j++] = main_str[i];
+	str[j] = 0;
+	free(main_str);
+	return (str);
 }
 
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*storage[4096];
+	static char	*main_str[4096];
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0)
 		return (NULL);
-	storage[fd] = ft_read_file(fd, storage[fd]);
-	if (!storage[fd])
+	main_str[fd] = read_file(fd, main_str[fd]);
+	if (!main_str[fd])
 		return (NULL);
-	line = ft_line(storage[fd]);
-	storage[fd] = ft_next_line(storage[fd]);
+	line = ft_get_line(main_str[fd]);
+	main_str[fd] = ft_get_next_content(main_str[fd]);
 	return (line);
 }

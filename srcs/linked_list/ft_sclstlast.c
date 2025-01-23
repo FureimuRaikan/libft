@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
+/*   ft_sclstlast.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 14:53:30 by yguinio           #+#    #+#             */
-/*   Updated: 2025/01/23 17:01:35 by fureimu          ###   ########.fr       */
+/*   Created: 2025/01/23 16:46:29 by fureimu           #+#    #+#             */
+/*   Updated: 2025/01/23 16:46:58 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin_free(char *s1, char *s2)
+t_sclist	*ft_sclstlast(t_sclist *stack)
 {
-	size_t	i;
-	size_t	j;
-	char	*ptr;
+	t_sclist	*begin;
 
-	i = -1;
-	j = 0;
-	if (!s1)
-		s1 = ft_calloc(1, 1);
-	if (!s1 || !s2)
+	begin = stack;
+	if (!stack)
 		return (NULL);
-	ptr = ft_calloc(sizeof(char), (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!ptr)
-		return (NULL);
-	while (s1 && s1[++i])
-		ptr[i] = s1[i];
-	while (s2 && s2[j])
-		ptr[i++] = s2[j++];
-	ptr[ft_strlen(s1) + ft_strlen(s2)] = 0;
-	free(s1);
-	return (ptr);
+	while (stack->next != begin)
+		stack = stack->next;
+	return (stack);
 }

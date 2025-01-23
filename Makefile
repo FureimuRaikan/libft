@@ -6,7 +6,7 @@
 #    By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/12 11:29:57 by yguinio           #+#    #+#              #
-#    Updated: 2025/01/22 16:08:01 by fureimu          ###   ########.fr        #
+#    Updated: 2025/01/23 17:07:26 by fureimu          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ DISPLAY_FILES=	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c get
 				ft_putnbr_hex_len.c ft_putnbr_len.c ft_putptr_len.c ft_putstr_len.c ft_sclst_print.c 
 
 LINKED_LIST_FILES=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
-					ft_lstiter.c ft_lstmap.c ft_sclst_clean.c ft_sclst_size.c ft_sclst_max.c ft_sclst_min.c
+					ft_lstiter.c ft_lstmap.c ft_sclst_clean.c ft_sclst_size.c ft_sclst_max.c ft_sclst_min.c ft_sclst_addback.c \
+					ft_sclstlast.c ft_sclstnew.c
 
 MEMORY_FILES=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_memchr.c ft_memcmp.c ft_calloc.c 
 
@@ -51,7 +52,9 @@ AR = ar -rcs
 CFLAGS = -Werror -Wextra -Wall
 INC_H = -I $(INC_DIR)
 
+DEFAULT = \033[0m
 DEF_COLOR = \033[0;90m
+WHITE = \033[1;37m
 GREEN = \033[0;92m
 YELLOW = \033[0;93m
 CYAN = \033[0;96m
@@ -63,7 +66,7 @@ $(OBJ_DIR):
 
 $(NAME) : $(OBJ)
 	@$(AR) $(NAME) $(OBJ) $(BASES)
-	@echo "$(GREEN)libft compiled!$(DEF_COLOR)"
+	@echo "$(GREEN)libft compiled !$(DEF_COLOR)"
 
 $(OBJ_DIR)%.o: $(CHECKS_DIR)%.c | $(OBJ_DIR)
 	@echo "$(YELLOW)Compiling: $< $(DEF_COLOR)"
@@ -91,13 +94,13 @@ $(OBJ_DIR)%.o: $(STRINGS_DIR)%.c | $(OBJ_DIR)
 
 clean:
 	@rm -rf $(OBJ_DIR)
-	@echo "$(BLUE)libft objects files cleaned!$(DEF_COLOR)"
+	@echo "$(CYAN)libft objects files cleaned !$(DEF_COLOR)"
 
 fclean : clean
-	rm -rf $(NAME)
-	@echo "$(BLUE)libft and its objects files cleaned!$(DEF_COLOR)"
+	@rm -rf $(NAME)
+	@echo "$(CYAN)libft and its objects files cleaned !$(DEF_COLOR)"
 
 re: fclean all
-	@echo "$(GREEN)libft succesfully rebuilt!$(DEF_COLOR)"
+	@echo "$(GREEN)libft succesfully rebuilt !$(DEF_COLOR)"
 
 .PHONY : all clean fclean re
