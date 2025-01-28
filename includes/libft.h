@@ -6,7 +6,7 @@
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 10:39:24 by yguinio           #+#    #+#             */
-/*   Updated: 2025/01/22 16:09:13 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/01/25 14:56:25 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include <limits.h>
+# include <stdbool.h>
 
 # include "checks.h"
 # include "conversion.h"
