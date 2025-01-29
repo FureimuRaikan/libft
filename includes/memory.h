@@ -6,7 +6,7 @@
 /*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 10:29:30 by fureimu           #+#    #+#             */
-/*   Updated: 2025/01/21 15:45:33 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/01/29 13:25:29 by fureimu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 void	*ft_calloc(size_t nmemb, size_t size);
 void	ft_bzero(void *s, size_t n);
+void	ft_free_split(char **array);
 
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
