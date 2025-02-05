@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+         #
+#    By: yguinio <yguinio@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/12 11:29:57 by yguinio           #+#    #+#              #
-#    Updated: 2025/01/29 13:27:49 by fureimu          ###   ########.fr        #
+#    Updated: 2025/02/05 14:32:36 by yguinio          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ DISPLAY_FILES=	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_
 
 LINKED_LIST_FILES=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
 					ft_lstiter.c ft_lstmap.c ft_sclst_clean.c ft_sclst_size.c ft_sclst_max.c ft_sclst_min.c ft_sclst_addback.c \
-					ft_sclstlast.c ft_sclstnew.c
+					ft_sclst_last.c ft_sclst_new.c
 
 MEMORY_FILES=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_memchr.c ft_memcmp.c ft_calloc.c ft_free_split.c
 
