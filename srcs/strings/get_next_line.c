@@ -6,7 +6,7 @@
 /*   By: yguinio <yguinio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 10:11:22 by yguinio           #+#    #+#             */
-/*   Updated: 2025/02/05 14:37:00 by yguinio          ###   ########.fr       */
+/*   Updated: 2025/02/07 10:49:50 by yguinio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_read_file(int fd, char *str_stored)
 	int		count;
 
 	count = 1;
-	while (!ft_strchr(str_stored, '\n') && count != 0)
+	while (count != 0 && !ft_strchr(str_stored, '\n'))
 	{
 		count = read(fd, buff, BUFFER_SIZE);
 		if (count == -1)
@@ -101,11 +101,13 @@ char	*get_next_line(int fd)
 		return (NULL);
 	str_stored[fd] = ft_read_file(fd, str_stored[fd]);
 	if (!str_stored[fd])
-	{
-		str_stored[fd] = NULL;
 		return (NULL);
-	}
 	line = ft_line(str_stored[fd]);
 	str_stored[fd] = ft_next_line(str_stored[fd]);
+	if (!str_stored[fd] || !*str_stored[fd])
+	{
+		free(str_stored[fd]);
+		str_stored[fd] = NULL;
+	}
 	return (line);
 }

@@ -6,7 +6,7 @@
 #    By: yguinio <yguinio@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/12 11:29:57 by yguinio           #+#    #+#              #
-#    Updated: 2025/02/05 15:03:38 by yguinio          ###   ########.fr        #
+#    Updated: 2025/02/07 10:24:41 by yguinio          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ MEMORY_FILES=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_memchr.c ft_mem
 
 STRINGS_FILES=	ft_strlen.c ft_reverse.c ft_strlcpy.c ft_strlcat.c ft_strrchr.c ft_strncmp.c ft_strnstr.c ft_strdup.c ft_strchr.c \
 				ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_strmapi.c ft_striteri.c ft_strjoin_free.c ft_strjoin_free.c get_next_line.c \
-				ft_substr_free.c ft_split_quote.c
+				ft_substr_free.c ft_split_quote.c ft_free_array_str.c
 			  
 OBJ = $(addprefix $(OBJ_DIR), $(CHECKS_FILES:.c=.o)) \
 	  $(addprefix $(OBJ_DIR), $(CONVERSION_FILES:.c=.o)) \

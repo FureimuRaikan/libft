@@ -6,7 +6,7 @@
 /*   By: yguinio <yguinio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 10:29:32 by fureimu           #+#    #+#             */
-/*   Updated: 2025/02/05 15:05:38 by yguinio          ###   ########.fr       */
+/*   Updated: 2025/02/07 10:25:00 by yguinio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 char	**ft_split(char const *s, char c);
 char	**ft_split_quote(char const *str, char c, char quote);
+void	ft_free_array_str(char **array);
 
 char	*get_next_line(int fd);
 
