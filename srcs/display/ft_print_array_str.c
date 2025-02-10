@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sclst_addback.c                                 :+:      :+:    :+:   */
+/*   ft_print_array_str.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yguinio <yguinio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/23 16:42:36 by fureimu           #+#    #+#             */
-/*   Updated: 2025/02/05 16:09:20 by yguinio          ###   ########.fr       */
+/*   Created: 2025/02/10 14:46:56 by yguinio           #+#    #+#             */
+/*   Updated: 2025/02/10 14:51:46 by yguinio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_sclst_addback(t_sclist **stack, t_sclist *new)
+void	ft_print_array_str(char **array)
 {
-	if (!stack)
+	int	i;
+
+	if (!array || !*array)
 		return ;
-	if (!*stack)
-		*stack = new;
-	else
-	{
-		if (ft_sclst_last(*stack))
-		{
-			ft_sclst_last(*stack)->next = new;
-			if (new)
-				new->next = *stack;
-		}
-	}
+	i = -1;
+	while (array[++i])
+		ft_putendl_fd(array[i], 1);
 }

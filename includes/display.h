@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   display.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yguinio <yguinio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 10:29:28 by fureimu           #+#    #+#             */
-/*   Updated: 2025/01/29 13:36:05 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/02/10 14:52:11 by yguinio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	ft_putnbr_fd(int n, int fd);
 # endif
 
 int		ft_printf(const char *str, ...);
+void	ft_print_array_str(char **array);
 int		ft_putchar_len(int c);
 int		ft_putnbr_hex_len(unsigned int n);
 int		ft_putnbr_hex_len_up(unsigned int n);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   linked_list.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fureimu <fureimu@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yguinio <yguinio@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 10:29:34 by fureimu           #+#    #+#             */
-/*   Updated: 2025/01/23 16:49:16 by fureimu          ###   ########.fr       */
+/*   Updated: 2025/02/05 16:09:20 by yguinio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void		ft_sclst_clean(t_sclist **sclst);
 void		ft_sclst_print(t_sclist **sclst, char c);
 int			ft_sclst_max(t_sclist *sclist);
 int			ft_sclst_min(t_sclist *sclist);
-void		ft_sclist_addback(t_sclist **stack, t_sclist *new);
-t_sclist	*ft_sclstlast(t_sclist *stack);
-t_sclist	*ft_sclist_new(int content);
+void		ft_sclst_addback(t_sclist **stack, t_sclist *new);
+t_sclist	*ft_sclst_last(t_sclist *stack);
+t_sclist	*ft_sclst_new(int content);
 
 #endif
